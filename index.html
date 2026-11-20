@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نوادر الفرائد الثقافية والعلمية والدينية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#0e7490; --primary-d:#155e75; --accent:#f59e0b; --accent-d:#d97706;
+  --green:#16a34a; --purple:#7c3aed; --rose:#e11d48; --ink:#1f2937; --muted:#6b7280;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',Tahoma,sans-serif;background:#f8fafc;color:var(--ink);line-height:1.9}
+img{max-width:100%}
+a{text-decoration:none;color:inherit}
+.container{width:min(1200px,92%);margin:auto}
+
+/* ===== Header ===== */
+header{background:linear-gradient(135deg,var(--primary),var(--primary-d));color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:14px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .badge{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--rose));display:grid;place-items:center;font-size:26px;box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.logo h1{font-size:1.35rem;font-weight:900}
+.logo p{font-size:.8rem;opacity:.85}
+.whatsapp-top{background:var(--green);color:#fff;padding:10px 22px;border-radius:50px;font-weight:700;display:flex;gap:8px;align-items:center;transition:.3s;box-shadow:0 4px 12px rgba(22,163,74,.4)}
+.whatsapp-top:hover{transform:translateY(-3px);background:#15803d}
+nav{background:rgba(0,0,0,.15)}
+nav ul{display:flex;list-style:none;flex-wrap:wrap;justify-content:center}
+nav a{display:block;padding:12px 20px;font-weight:700;font-size:.95rem;transition:.25s;border-bottom:3px solid transparent}
+nav a:hover,nav a.active{background:rgba(255,255,255,.12);border-bottom-color:var(--accent);color:#fde68a}
+
+/* ===== Hero ===== */
+.hero{background:linear-gradient(135deg,#ecfeff 0%,#fef3c7 100%);padding:60px 0}
+.hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h2{font-size:2.1rem;font-weight:900;color:var(--primary-d);margin-bottom:15px}
+.hero h2 span{color:var(--accent-d)}
+.hero p{color:var(--muted);font-size:1.08rem;margin-bottom:25px}
+.btn{display:inline-block;padding:13px 32px;border-radius:50px;font-weight:800;transition:.3s;margin:5px}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-d));color:#fff;box-shadow:0 6px 16px rgba(245,158,11,.4)}
+.btn-primary:hover{transform:translateY(-4px)}
+.btn-outline{border:2px solid var(--primary);color:var(--primary-d)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.hero-img{text-align:center;position:relative}
+.hero-img img{border-radius:24px;box-shadow:0 20px 50px rgba(14,116,144,.25);background:#fff;padding:15px}
+
+/* ===== Ad slots ===== */
+.ad-slot{margin:35px auto;border:2px dashed #cbd5e1;border-radius:16px;background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 12px,#e2e8f0 12px,#e2e8f0 24px);text-align:center;padding:26px;color:var(--muted)}
+.ad-slot .tag{display:inline-block;background:var(--rose);color:#fff;font-size:.72rem;font-weight:800;padding:3px 14px;border-radius:50px;margin-bottom:8px}
+.ad-slot p{font-size:.9rem}
+.ad-inner{margin-top:10px;background:linear-gradient(135deg,#fef9c3,#fde68a);border:1px solid #fbbf24;border-radius:12px;padding:14px;font-weight:700;color:#92400e}
+
+/* ===== Sections ===== */
+section{padding:60px 0}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{display:inline-block;font-size:1.9rem;font-weight:900;color:var(--primary-d);position:relative;padding-bottom:12px}
+.section-title h2::after{content:'';position:absolute;bottom:0;right:25%;left:25%;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--rose))}
+.section-title p{color:var(--muted);margin-top:8px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+.card{background:#fff;border-radius:20px;padding:28px;box-shadow:0 8px 24px rgba(0,0,0,.07);transition:.3s;border-top:5px solid var(--primary)}
+.card:hover{transform:translateY(-8px);box-shadow:0 16px 36px rgba(0,0,0,.13)}
+.card h3{font-size:1.15rem;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.card .icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:22px;flex-shrink:0}
+.card p{color:var(--muted);font-size:.95rem}
+.card .num{font-size:.7rem;font-weight:800;background:var(--primary);color:#fff;padding:2px 12px;border-radius:50px}
+
+/* downloads */
+#downloads{background:linear-gradient(135deg,#f0f9ff,#eef2ff)}
+.dl-card{border-top-color:var(--accent)}
+.dl-card h3{color:var(--accent-d)}
+.dl-btn{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:linear-gradient(135deg,var(--green),#15803d);color:#fff;font-weight:800;padding:10px 26px;border-radius:50px;transition:.3s;box-shadow:0 5px 14px rgba(22,163,74,.35)}
+.dl-btn:hover{transform:scale(1.05)}
+
+/* نصائح */
+.tip-card{border-top-color:var(--purple)}
+.tip-card h3{color:var(--purple)}
+.note-img{margin-top:15px;border:2px dashed var(--purple);border-radius:14px;padding:14px;background:#faf5ff;text-align:center;color:#6b21a8;font-size:.88rem;font-weight:700}
+
+/* نوادر */
+.nadir-card{border-top-color:var(--rose)}
+.nadir-card h3{color:var(--rose)}
+.hadith{background:#fffbeb;border-right:5px solid var(--accent);border-radius:10px;padding:14px 18px;margin:12px 0;font-style:italic;color:#78350f;font-weight:700}
+.takhrij{font-size:.8rem;color:var(--muted);background:#f1f5f9;border-radius:8px;padding:8px 14px}
+
+/* حجز */
+#booking{background:linear-gradient(135deg,var(--primary),var(--primary-d));color:#fff}
+#booking .section-title h2{color:#fff}
+#booking .section-title p{color:#cffafe}
+.form-card{background:#fff;color:var(--ink);border-radius:22px;padding:35px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.form-card label{display:block;font-weight:800;margin:14px 0 6px;font-size:.92rem}
+.form-card input,.form-card select,.form-card textarea{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:12px;font-family:inherit;font-size:.95rem;transition:.25s}
+.form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(14,116,144,.12)}
+.submit-btn{width:100%;margin-top:22px;background:linear-gradient(135deg,var(--green),#15803d);color:#fff;border:none;padding:15px;border-radius:50px;font-size:1.05rem;font-weight:900;cursor:pointer;transition:.3s;font-family:inherit}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(22,163,74,.45)}
+
+/* طلبات الزوار */
+#requests{background:linear-gradient(135deg,#fdf4ff,#fff7ed)}
+.req-icons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.req-icons div{background:#fff;border-radius:16px;padding:18px 28px;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,.08);font-weight:800;color:var(--primary-d);transition:.3s}
+.req-icons div:hover{transform:translateY(-5px)}
+.req-icons span{display:block;font-size:2rem;margin-bottom:6px}
+
+/* Footer */
+footer{background:#0f172a;color:#cbd5e1;padding:45px 0 20px;text-align:center}
+footer .fw{color:#fff;font-weight:900;font-size:1.2rem;margin-bottom:10px}
+footer a.wa{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:11px 28px;border-radius:50px;font-weight:800;margin-top:15px}
+footer .copy{margin-top:25px;font-size:.82rem;color:#64748b;border-top:1px solid #1e293b;padding-top:18px}
+
+/* WhatsApp float */
+.wa-float{position:fixed;bottom:22px;left:22px;width:60px;height:60px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 8px 22px rgba(22,163,74,.5);z-index:200;transition:.3s;animation:pulse 2s infinite}
+.wa-float:hover{transform:scale(1.12)}
+@keyframes pulse{0%,100%{box-shadow:0 8px 22px rgba(22,163,74,.5)}50%{box-shadow:0 8px 22px rgba(22,163,74,.9),0 0 0 12px rgba(22,163,74,.15)}}
+
+@media(max-width:860px){.hero .container{grid-template-columns:1fr}.hero h2{font-size:1.6rem}.logo h1{font-size:1.05rem}}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container header-top">
+    <div class="logo">
+      <div class="badge">📚</div>
+      <div>
+        <h1>نوادر الفرائد الثقافية والعلمية والدينية</h1>
+        <p>بإدارة الأستاذة: أمل صالح الصرايرة</p>
+      </div>
+    </div>
+    <a class="whatsapp-top" href="https://wa.me/962791536024" target="_blank">💬 تواصلي معنا واتساب</a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">الرئيسية</a></li>
+      <li><a href="#nawadir">نوادر العلم والثقافة</a></li>
+      <li><a href="#tips">نصائح للمعلمين والمجتمع المحلي</a></li>
+      <li><a href="#downloads">روابط تحميل خاصة بالمعلمين</a></li>
+      <li><a href="#booking">حجز مواعيد</a></li>
+      <li><a href="#requests">طلبات الزوار</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home" style="padding-top:50px">
+  <div class="container">
+    <div>
+      <h2>أهلاً وسهلاً بكم في <span>نوادر الفرائد</span></h2>
+      <p>موقعك الثقافي والعلمي والديني المتكامل — نوادر المعلومات، نصائح للمعلمين والمجتمع المحلي، خدمات تعريف الطابعات وآلات التصوير، وروابط تحميل مفيدة لكل معلم ومعلمة في المملكة الأردنية الهاشمية.</p>
+      <a href="#downloads" class="btn btn-primary">⬇️ روابط التحميل</a>
+      <a href="#booking" class="btn btn-outline">📅 احجز موعدك الآن</a>
+    </div>
+    <div class="hero-img">
+      <img src="hero-teacher.png" alt="معلم وحوله طابعات وآلات تصوير">
+    </div>
+  </div>
+</section>
+
+<!-- ===== مساحة إعلانية 1 =====
+     استبدلي محتوى .ad-inner بلصق كود Google AdSense الخاص بك هنا -->
+<div class="container">
+  <div class="ad-slot">
+    <span class="tag">مساحة إعلانية</span>
+    <p>هنا يمكنك لصق كود AdSense أو أي شبكة إعلانية — جاهزة للربح من المشاهدات</p>
+    <div class="ad-inner">📢 إعلان تجاري تجريبي — اشترك في أفضل الدورات التدريبية للمعلمين بخصم 50%!</div>
+  </div>
+</div>
+
+<!-- ================= روابط التحميل ================= -->
+<section id="downloads">
+  <div class="container">
+    <div class="section-title">
+      <h2>⬇️ روابط تحميل خاصة بالمعلمين</h2>
+      <p>مجموعة مختارة بعناية لخدمة المعلمين — اضغط على الرابط للتحميل مباشرة</p>
+    </div>
+    <div class="grid">
+      <div class="card dl-card">
+        <h3><span class="icon" style="background:#eff6ff">🗝️</span> تفعيل الأوفيس والويندوز</h3>
+        <p>أكثر من أداة تفعيل في ملف واحد مجاني.</p>
+        <a class="dl-btn" href="https://www.mediafire.com/file/vq4p13tmnctbg6b/%D8%AA%D9%81%D8%B9%D9%8A%D9%84_%D8%A7%D9%88%D9%81%D9%8A%D8%B3_%D9%88%D9%8A%D9%86%D8%AF%D9%88%D8%B2.zip/file" target="_blank">تحميل الآن ⬇</a>
+      </div>
+      <div class="card dl-card">
+        <h3><span class="icon" style="background:#f0fdf4">✅</span> إجابات امتحانات ترفيع المعلمين</h3>
+        <p>إجابات الامتحان لكل دورات الترفيع كاملة.</p>
+        <a class="dl-btn" href="https://www.mediafire.com/file/uj8ytv3vz8r68tq/%D8%A7%D8%AC%D8%A7%D8%A8%D8%A7%D8%AA_%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A7%D8%AA_%D9%83%D8%A7%D9%85%D9%84%D8%A9_-20241021T084129Z-001%25281%2529.zip/file" target="_blank">تحميل الآن ⬇</a>
+      </div>
+      <div class="card dl-card">
+        <h3><span class="icon" style="background:#fefce8">🗓️</span> برنامج جدول الدروس الأسبوعي</h3>
+        <p>برنامج Time Table لعمل جداول الحصص — نسخة مفعلة مسبقاً.</p>
+        <a class="dl-btn" href="https://www.mediafire.com/file/eocy5fw4vu3vqs3/timetable_%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC_%D8%B9%D9%85%D9%84_%D8%AC%D8%AF%D9%88%D9%84_%D8%A7%D9%84%D8%AD%D8%B5%D8%B5.rar/file" target="_blank">تحميل الآن ⬇</a>
+      </div>
+      <div class="card dl-card">
+        <h3><span class="icon" style="background:#eff6ff">📊</span> أوفيس 2026 عربي</h3>
+        <p>حزمة مايكروسوفت أوفيس باللغة العربية كاملة.</p>
+        <a class="dl-btn" href="https://www.mediafire.com/file/4i6drqv4lry69yj/Office-2016-%255BAR%255D.rar/file?action=check" target="_blank">تحميل الآن ⬇</a>
+      </div>
+      <div class="card dl-card">
+        <h3><span class="icon" style="background:#fff7ed">🏫</span> أسئلة مدارس الملك عبدالله الثاني</h3>
+        <p>أسئلة امتحانات سنوات سابقة لطلبة الصف السابع.</p>
+        <a class="dl-btn" href="https://www.mediafire.com/file/0w90nw0mbc0g9ob/%D9%86%D9%85%D8%A7%D8%B0%D8%AC_%D8%A3%D8%B3%D8%A6%D9%84%D8%A9_%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86_%D9%85%D8%AF%D8%A7%D8%B1%D8%B3_%D8%A7%D9%84%D9%85%D9%84%D9%83_%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A_%D9%84%D9%84%D8%AA%D9%85%D9%8A%D8%B2_%D9%84%D9%84%D9%85%D9%82%D8%A8%D9%88%D9%84%D9%8A%D9%86_%D9%85%D9%86_%D8%A7%D9%84%D8%B7%D9%84%D8%A7%D8%A8.pdf/file" target="_blank">تحميل الآن ⬇</a>
+      </div>
+      <div class="card dl-card">
+        <h3><span class="icon" style="background:#f0fdfa">🏃</span> كود الاختبار البعدي — جائزة الملك عبدالله</h3>
+        <p>كود إدخال قراءات الاختبار البعدي لجائزة الملك عبدالله للياقة البدنية دفعة واحدة.</p>
+        <a class="dl-btn" href="https://www.mediafire.com/file/rbh2feyyjt74tly/%D9%83%D9%88%D8%AF_%D8%A7%D8%AF%D8%AE%D8%A7%D9%84_%D9%82%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA_%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1_%D8%A7%D9%84%D8%A8%D8%B9%D8%AF%D9%8A_%D9%85%D8%B1%D8%A9_%D9%88%D8%A7%D8%AD%D8%AF%D8%A9_%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9_%D8%A7%D9%84%D9%84%D9%8A%D8%A7%D9%82%D8%A9_%D8%A7%D9%84%D8%A8%D8%AF%D9%86%D9%8A%D8%A9.docx/file" target="_blank">تحميل الآن ⬇</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== مساحة إعلانية 2 ===== -->
+<div class="container">
+  <div class="ad-slot">
+    <span class="tag">مساحة إعلانية</span>
+    <p>مساحة إعلانية ثانية — زيدي أرباحك بإضافة كود إعلاني هنا</p>
+    <div class="ad-inner">🛒 إعلان تجاري تجريبي — أفضل عروض الطابعات وآلات التصوير للمدارس!</div>
+  </div>
+</div>
+
+<!-- ================= نصائح للمعلمين ================= -->
+<section id="tips" style="background:#faf5ff">
+  <div class="container">
+    <div class="section-title">
+      <h2>💡 نصائح للمعلمين والمجتمع المحلي</h2>
+      <p>معلومات خاصة باحتياجات المعلمين وكل ما يخص وزارة التربية والتعليم الأردنية</p>
+    </div>
+    <div class="grid">
+      <div class="card tip-card">
+        <h3><span class="num">نصيحة 1</span> منصة الموظفين</h3>
+        <p>للوصول إلى القوائم الخاصة بالمعلمين على منصة الموظفين: انزلي تحت ستجدين خانة اسمها <b>"دخول"</b> — اضغطي عليها وستظهر القوائم طرف الصفحة بعد فتح حساب على المنصة.</p>
+      </div>
+      <div class="card tip-card">
+        <h3><span class="num">نصيحة 2</span> لا تحدثي البرامج المفعلة</h3>
+        <p>عدم تحديث أي برنامج تم تفعيله بطريقة غير الترخيص المدفوع، لأنه بعد التحديث سيصبح نسخة غير مفعلة.</p>
+      </div>
+      <div class="card tip-card">
+        <h3><span class="num">نصيحة 3</span> استخدمي متصفح فايرفوكس</h3>
+        <p>لتحميل البرامج المفعلة بطرق غير رسمية استخدمي متصفح <b>فايرفوكس</b>، لأن متصفح قوقل كروم يحذفها ولا يسمح بتنزيلها.</p>
+      </div>
+      <div class="card tip-card">
+        <h3><span class="num">نصيحة 4</span> أضيفي استثناءاً لبرنامج الحماية</h3>
+        <p>يجب إضافة استثناء من خيارات برنامج الحماية من الفيروسات عند تحميل تفعيلات البرامج غير الرسمية لكي لا يحذفها.</p>
+        <div class="note-img">🖼️ صورة توضيحية: أضيفي مجلد التحميل إلى قائمة "الاستثناءات / Exclusions" في برنامج الحماية لديكِ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= نوادر العلم والثقافة ================= -->
+<section id="nawadir">
+  <div class="container">
+    <div class="section-title">
+      <h2>💎 نوادر العلم والثقافة</h2>
+      <p>خبرات ثقافية ونوادر معلومات دينية وعلمية تهمك</p>
+    </div>
+    <div class="grid">
+      <div class="card nadir-card">
+        <h3><span class="num">1</span> التناسب بين الوحوش ووحشي</h3>
+        <p>لاحظوا أن سيدنا حمزة رضي الله عنه كان صياداً للأسود وهي وحوش، وقتله <b>وحشي</b> يوم أحد — لاحظوا التناسب بين الوحوش ووحشي.</p>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">2</span> صلاة النافلة جالساً</h3>
+        <p>يجوز صلاة النافلة جالساً، لكن بنصف الأجر.</p>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">3</span> فرق بين اسمي إيمان وإسلام</h3>
+        <p>اسم <b>إيمان</b> يُسمَّى به النساء فقط، واسم <b>إسلام</b> يُسمَّى به الرجال والنساء — وذلك لأننا كلنا مسلمون وليس كلنا مؤمنون.</p>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">4</span> أصل اسم إبراهيم</h3>
+        <p>اسم إبراهيم أصله <b>"أب رحيم"</b> وليس اسماً أعجمياً.</p>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">5</span> كتابة اسم إبراهيم في القرآن</h3>
+        <p>كتب اسم إبراهيم في القرآن الكريم هكذا: <b>"ابراهم"</b> قبل ولادة سيدنا إسماعيل، وبعد ولادته كُتب <b>"إبراهيم"</b> بالياء في القرآن الكريم.</p>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">6</span> سر الباء في البسملة</h3>
+        <p>حروف الجر تأتي قبل الأسماء دائماً، وكلمة <b>"بسم"</b> في البسملة: الباء حرف جر جاء بعده اسم وهي كلمة "اسم".</p>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">7</span> ماعز بن مالك والمرأة الغامدية</h3>
+        <p>الصحابي الجليل ماعز بن مالك الذي زنى بالمرأة الغامدية: السلف نقلوا لنا اسمه، لكنهم ستراها ولم ينقلوا لنا اسمها — نقلوا لنا فقط اسم عشيرتها.</p>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">8</span> تكرار الحج والعمرة أفضل من التصدق</h3>
+        <div class="hadith">«تابِعوا بينَ الحجِّ والعمرة، فإنَّ متابعةً بينهما تنفي الفقرَ والذنوبَ كما ينفي الكيرُ خبثَ الحديدِ»</div>
+        <div class="takhrij">خلاصة حكم المحدث: إسناده حسن | الراوي: عامر بن ربيعة | المحدث: ابن كثير | المصدر: جامع المسانيد والسنن (5606) | أخرجه أحمد (15694)، وعبد الرزاق (8796)، وابن أبي شيبة (12804) واللفظ لهم.</div>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">9</span> حديث ضعيف: لا تتمارضوا</h3>
+        <div class="hadith">«عن ابن عباس رضي الله عنهما قال: قال رسول الله صلى الله عليه وسلم: لا تتمارضوا، فتمرضوا، ولا تحفروا قبوركم، فتموتوا» وفي لفظ: «لا تتمارضوا، فتمرضوا؛ فتموتوا»</div>
+        <div class="takhrij">⚠️ الدرجة: <b>منكر</b> — هذا الحديث لا يصح.</div>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">10</span> حل مشكلة ماكينة موزر</h3>
+        <p>لحل مشكلة ماكينة الحلاقة <b>موزر الألمانية</b> وإيقاف الصوت المزعج عند تشغيلها: <b>أرخي البرغي الدائري الأسود قليلاً</b> وسيختفي الصوت المزعج.</p>
+        <div class="note-img" style="border-color:var(--rose);background:#fff1f2;color:#9f1239">
+          <img src="moser-screw.png" alt="ماكينة موزر مع دائرة حمراء حول البرغي الأسود" style="max-height:420px;border-radius:12px">
+          <p style="margin-top:10px">🔴 الدائرة الحمراء توضح مكان البرغي الأسود الدائري — أرخيه قليلاً</p>
+        </div>
+      </div>
+      <div class="card nadir-card">
+        <h3><span class="num">11</span> تناول المسكنات دون تأثير</h3>
+        <p>لتناول المسكنات دون تأثير على جسمك: اشرب الماء على مدار اليوم والليلة وليس دفعة واحدة، لأن شرب الماء بكميات كبيرة مرة واحدة يسبب مرض <b>تسمم الماء</b> المميت، ويجب أن تكون حالة جسمك تسمح بإخراج السوائل وإلا أُصبتِ بمرض <b>احتباس السوائل</b>.</p>
+      </div>
+      <div class="card nadir-card" style="grid-column:1/-1">
+        <h3><span class="num">12</span> طريقة رائعة لتعليم الأطفال وذوي صعوبات التعلم القراءة والكتابة عن طريق الاسم</h3>
+        <p>إليكم طريقة مجرَّبة لتعليم الأطفال وذوي صعوبات التعلم القراءة والكتابة اعتماداً على <b>اسم الطفل نفسه</b> — لأن الاسم أقرب الكلمات إلى نفس الطفل وأسهلها نطقاً وحفظاً:</p>
+        <div style="text-align:center;margin-top:18px">
+          <img src="teaching-method.jpg" alt="طريقة تعليم القراءة والكتابة عن طريق الاسم" style="max-width:640px;width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.15)">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== مساحة إعلانية 3 ===== -->
+<div class="container">
+  <div class="ad-slot">
+    <span class="tag">مساحة إعلانية</span>
+    <p>مساحة إعلانية ثالثة أسفل المحتوى الثقافي</p>
+    <div class="ad-inner">📱 إعلان تجاري تجريبي — تطبيقات تعليمية مميزة لأطفالك!</div>
+  </div>
+</div>
+
+<!-- ================= حجز مواعيد ================= -->
+<section id="booking">
+  <div class="container">
+    <div class="section-title">
+      <h2>📅 حجز مواعيد</h2>
+      <p>خدمات تعريف الطابعات وآلات التصوير وكل ما يخص المعلمين — املئي النموذج وسيصلنا طلبك فوراً عبر واتساب</p>
+    </div>
+    <div style="max-width:640px;margin:auto">
+      <div class="form-card">
+        <form onsubmit="return sendBooking(event)">
+          <label>الاسم الكريم</label>
+          <input type="text" id="b-name" required placeholder="اكتب اسمك">
+          <label>رقم الهاتف</label>
+          <input type="tel" id="b-phone" required placeholder="07XXXXXXXX">
+          <label>البريد الإلكتروني</label>
+          <input type="email" id="b-email" required placeholder="example@email.com">
+          <label>نوع الخدمة المطلوبة</label>
+          <select id="b-service">
+            <option>تعريف طابعة</option>
+            <option>تعريف آلة تصوير</option>
+            <option>تفعيل برنامج</option>
+            <option>استشارة خاصة بالمعلمين</option>
+            <option>خدمة أخرى</option>
+          </select>
+          <label>ملاحظات إضافية (اختياري)</label>
+          <textarea id="b-msg" rows="3" placeholder="اكتب أي تفاصيل إضافية هنا..."></textarea>
+          <button type="submit" class="submit-btn">📩 إرسال الطلب عبر واتساب</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= طلبات الزوار ================= -->
+<section id="requests">
+  <div class="container">
+    <div class="section-title">
+      <h2>🙋 طلبات الزوار</h2>
+      <p>اطلب أي برنامج أو كتاب، أو اطلب شرح طريقة عمل أي موقع يرغبون بها</p>
+    </div>
+    <div class="req-icons">
+      <div><span>💻</span>برنامج</div>
+      <div><span>📖</span>كتاب</div>
+      <div><span>🌐</span>شرح موقع</div>
+    </div>
+    <div style="max-width:640px;margin:auto">
+      <div class="form-card">
+        <form onsubmit="return sendRequest(event)">
+          <label>الاسم الكريم</label>
+          <input type="text" id="r-name" required placeholder="اكتب اسمك">
+          <label>نوع الطلب</label>
+          <select id="r-type">
+            <option>برنامج</option>
+            <option>كتاب</option>
+            <option>شرح طريقة عمل موقع</option>
+            <option>طلب آخر</option>
+          </select>
+          <label>تفاصيل الطلب</label>
+          <textarea id="r-details" rows="4" required placeholder="اكتب اسم البرنامج أو الكتاب أو الموقع الذي تريد شرحه..."></textarea>
+          <button type="submit" class="submit-btn">📩 إرسال الطلب عبر واتساب</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="fw">📚 نوادر الفرائد الثقافية والعلمية والدينية</div>
+    <p>بإدارة الأستاذة: أمل صالح الصرايرة</p>
+    <p>للتواصل وحجز المواعيد عبر الواتساب:</p>
+    <a class="wa" href="https://wa.me/962791536024" target="_blank">💬 00962791536024</a>
+    <div class="copy">جميع الحقوق محفوظة © 2026 — نوادر الفرائد الثقافية والعلمية والدينية</div>
+  </div>
+</footer>
+
+<!-- زر واتساب عائم -->
+<a class="wa-float" href="https://wa.me/962791536024" target="_blank" title="تواصلي معنا واتساب">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4-4.9-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .1 0 .7-.2 1.3z"/></svg>
+</a>
+
+<script>
+function sendBooking(e){
+  e.preventDefault();
+  var t = "🔔 طلب حجز موعد جديد%0A" +
+    "👤 الاسم: " + encodeURIComponent(document.getElementById('b-name').value) + "%0A" +
+    "📞 الهاتف: " + encodeURIComponent(document.getElementById('b-phone').value) + "%0A" +
+    "📧 الإيميل: " + encodeURIComponent(document.getElementById('b-email').value) + "%0A" +
+    "🛠️ الخدمة: " + encodeURIComponent(document.getElementById('b-service').value) + "%0A" +
+    "📝 ملاحظات: " + encodeURIComponent(document.getElementById('b-msg').value || 'لا يوجد');
+  window.open('https://wa.me/962791536024?text=' + t, '_blank');
+  return false;
+}
+function sendRequest(e){
+  e.preventDefault();
+  var t = "🙋 طلب زائر جديد%0A" +
+    "👤 الاسم: " + encodeURIComponent(document.getElementById('r-name').value) + "%0A" +
+    "📌 نوع الطلب: " + encodeURIComponent(document.getElementById('r-type').value) + "%0A" +
+    "📝 التفاصيل: " + encodeURIComponent(document.getElementById('r-details').value);
+  window.open('https://wa.me/962791536024?text=' + t, '_blank');
+  return false;
+}
+// تفعيل الرابط النشط في القائمة
+document.querySelectorAll('nav a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.querySelectorAll('nav a').forEach(function(x){x.classList.remove('active')});
+    a.classList.add('active');
+  });
+});
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     أماكن الإعلانات الجاهزة للربح:
+     ابحثي عن "ad-slot" في هذا الملف (3 أماكن) والصقي كود
+     Google AdSense الخاص بك مكان div.ad-inner
+     ══════════════════════════════════════════════════════ -->
+</body>
+</html>
